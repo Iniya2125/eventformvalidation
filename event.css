@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #333;
+    color: #fcfbfb;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: rgb(251, 245, 245);
+    text-decoration: none;
+    
+}
+
+h1.animated-title {
+    text-align: center;
+    font-size: 2em;
+    color: #0f0f0f; 
+    text-shadow: 2px 2px 5px rgb(63, 61, 61); 
+    animation: slideIn 1s ease-out; 
+    font-family: 'Charm';
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.head {
+    font-size: 3em; 
+    background: linear-gradient(to right, #ff1b50, #eba7fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: 'Almendra SC';
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+}
+
+.hackathon-info {
+    display: flex;
+    align-items: center;
+}
+
+.hackathon-image {
+    max-width: 50%;
+    color: rgb(12, 12, 12);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px;
+    width: 90%;
+    height: 300px; 
+    position: relative; 
+}
+
+.hackathon-details {
+    max-width: 50%;
+    padding-left: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button {
+    background-color: rgb(255, 92, 239);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff96d0;
+}
+
+
+
+
