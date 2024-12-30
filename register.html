@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Registration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .form-select:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .form-container input[type="submit"] {
+            background-color: rgb(255, 92, 239);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #ff8be4;
+        }
+        .alert {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+        .success-message {
+            color: rgb(255, 123, 244);
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Hackathon 2024 Registration</h1>
+    <form id="registrationForm" action="#" method="post" onsubmit="return validateForm()">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+
+        <label for="college">College Name</label>
+        <input type="text" id="college" class="form-control" placeholder="Enter your college name" required>
+
+        <label for="members">Members Attending</label>
+        <select id="members" class="form-select" required>
+            <option value="">Select number of members</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <label for="task">Task Name</label>
+        <input type="text" id="task" class="form-control" placeholder="Enter your task name" required>
+
+        <input type="submit" value="Register Now">
+    </form>
+
+
+    <div id="successMessage" class="success-message" style="display: none;">
+        Registration successful! Thank you for signing up for Hackathon 2024.
+    </div>
+</div>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var college = document.getElementById("college").value;
+    var members = document.getElementById("members").value;
+    var task = document.getElementById("task").value;
+
+   
+    document.querySelectorAll(".alert").forEach(alert => alert.remove());
+
+
+    if (name === '') {
+        alert('Please enter your name');
+        return false;
+    }
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+
+    if (college === '') {
+        alert('Please enter your college name');
+        return false;
+    }
+
+   
+    if (members === '') {
+        alert('Please select the number of members');
+        return false;
+    }
+
+
+    if (task === '') {
+        alert('Please enter a task name');
+        return false;
+    }
+
+   
+    document.getElementById("registrationForm").style.display = 'none'; 
+    document.getElementById("successMessage").style.display = 'block';   
+
+   
+    return false;  
+}
+</script>
+
+</body>
+</html>
